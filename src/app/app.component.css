@@ -1,0 +1,92 @@
+
+/* Main Styles */
+
+hr {
+    width: 100%;
+}
+
+
+header nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* width: 95%; */
+}
+
+header nav ul {
+    display: flex;
+    width: 40%;
+    justify-content: center;
+}
+
+header nav ul li {
+    list-style-type: none;
+    align-self: center;
+    margin: 0 10px;
+    font-size: 0.75em;
+    padding: 5px;
+    border-radius: 3px;
+}
+
+header nav h1 .title {
+    font-weight: bolder;
+    font-size: 1.1em;
+    width: 25%;
+    margin: 0 0 0 1em;
+}
+
+header nav .others {
+    /* display: inline; */
+    margin-bottom: 10px;
+}
+
+header nav .others button.bg-dark,
+header nav .others button.bg-grey {
+    padding: 8px;
+}
+
+header nav .all .lang-country {
+    display: flex;
+    flex: wrap;
+}
+
+header nav .all .lang-country #language {
+    margin: 0px 8px 0px 0px;
+    border-radius: 3px;
+    padding: 5px;
+}
+
+header nav .all .lang-country #country-list {
+    border-radius: 3px;
+    padding: 5px;
+}
+
+header nav .others {
+    float: right;
+}
+
+
+header nav .others button {
+    margin: 9px 0px 0px 10px;
+    border-radius: 3px;
+    border: none;
+    padding: 5px;
+}
+
+header nav .others select {
+    padding: 5px;
+    border-radius: 4px;
+}
+
+@media only screen and (max-width: 1000px) {
+    header nav .others {
+        display: flex;
+        flex-wrap: wrap;
+    }   
+    
+    header nav ul {
+        display: flex;
+        width: 50%;
+        justify-content: center;
+    }
+}
