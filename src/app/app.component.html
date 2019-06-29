@@ -1,59 +1,270 @@
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <meta name="description" description="Your one stop shop to rent desired rides">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta
+      name="description"
+      description="Your one stop shop to rent desired rides"
+    />
     <title>Renty</title>
-</head>
-<body>
-      <header>
-          <nav id="navbar">
-              <h1>
-                  <span class="title">Renty</span>
-              </h1> 
-  
-              <ul>
-                  <li class="bg-orange">Help</li>
-                  <li>Terms & Conditions</li>
-                  <li>About</li>
-                  <li>Contact Us</li>
-              </ul>
+  </head>
+  <body>
+    <header>
+      <nav id="navbar">
+        <h1>
+          <span class="title">Renty</span>
+        </h1>
 
-              <div class="all">
-                  <div class="lang-country">
-                      <select name="language" id="language">
-                          <option value="fr">English</option>
-                          <option value="fr">French</option>
-                          <option value="fr">Latin</option>
-                          <option value="fr">Portuguese</option>
-                        </select>
-    
-                        <select class="bg-orange" name="country" id="country-list">
-                            <option value = "">Choose Country</option>
-                        </select>
+        <ul>
+          <li class="bg-orange">Help</li>
+          <li>Terms & Conditions</li>
+          <li>About</li>
+          <li>Contact Us</li>
+        </ul>
+
+        <div class="all">
+          <div class="lang-country">
+            <select name="language" id="language">
+              <option value="en">English</option>
+              <option value="fr">French</option>
+              <option value="la">Latin</option>
+              <option value="pt">Portuguese</option>
+            </select>
+
+            <select class="bg-orange" name="country" id="country-list">
+              <option value=""> &#xf041; Choose Country </option>
+            </select>
+          </div>
+
+          <div class="others">
+            <button class="bg-dark">
+              Register
+            </button>
+            <button class="bg-grey">Sign in</button>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <section id="components">
+        <header>
+          <app-nav></app-nav>
+        </header>
+
+        <section id="search-comp">
+          <app-search></app-search>
+        </section>
+
+        <div class="grid">
+          <section class="side-bar">
+            <section id="info-comp">
+              <div class="info-heading">
+                <h2>Info</h2>
+              </div>
+              <div id="note">
+                <p>
+                  <b>Please Note:</b> The vehicles shown are examples. Specific
+                  models within a car class may vary in availability and
+                  features, such as passenger setting, luggage capacity and
+                  mileage
+                </p>
+              </div>
+            </section>
+
+            <section id="filter-results">
+              <div class="filter">
+                <div class="info-heading">
+                  <h2>Filter Results</h2>
+                </div>
+
+                <div class="topic">
+                  <h3>PRICE RANGE</h3>
+                </div>
+
+                <div id="filter-meter">
+                  <form>
+                    <input
+                      type="range"
+                      [(ngModel)]="firstReading"
+                      name="firstReading"
+                      min="0"
+                      max="500"
+                    />
+                    <input
+                      type="range"
+                      [(ngModel)]="secondReading"
+                      name="secondReading"
+                      min="501"
+                      max="1000"
+                      ngDefaultControl
+                    />
+                  </form>
+                </div>
+                <div class="output">
+                  <output>${{ firstReading }}</output>
+                  &nbsp;
+                  <output>${{ secondReading }}</output>
+                </div>
+
+                <section class="manufacturers">
+                  <div class="topic">
+                    <h3>MANUFACTURERS</h3>
                   </div>
-                  
-      
-                  <div class="others">             
-                    <button class="bg-dark">Register</button>
-                    <button class="bg-grey">Sign in</button>
+
+                  <div class="manufacturers">
+                    <form>
+                      <div class="form-group">
+                        <div id="checkbox">
+                          <input type="checkbox" name="ford" id="ford" />
+                          <label for="ford">Ford</label>
+                        </div>
+                        <div class="number">
+                          <span>1</span>
+                        </div>
+                      </div>
+
+                      <div class="form-group">
+                        <div id="checkbox">
+                          <input type="checkbox" name="hyundai" id="hyundai" />
+                          <label for="hyundai">Hyundai</label>
+                        </div>
+                        <div class="number">
+                          <span>5</span>
+                        </div>
+                      </div>
+
+                      <div class="form-group">
+                        <div id="checkbox">
+                          <input type="checkbox" name="honda" id="honda" />
+                          <label for="honda">Honda</label>
+                        </div>
+                        <div class="number">
+                          <span>3</span>
+                        </div>
+                      </div>
+
+                      <div class="form-group">
+                        <div id="checkbox">
+                          <input type="checkbox" name="nissan" id="nissan" />
+                          <label for="nissan">Nissan</label>
+                        </div>
+                        <div class="number">
+                          <span>2</span>
+                        </div>
+                      </div>
+
+                      <div class="form-group">
+                        <div id="checkbox">
+                          <input type="checkbox" name="toyota" id="toyota" />
+                          <label for="toyota">Toyota</label>
+                        </div>
+                        <div class="number">
+                          <span>4</span>
+                        </div>
+                      </div>
+                    </form>
                   </div>
+                </section>
+
+                <section id="num-of-passengers">
+                  <div class="topic">
+                    <h3>NUMBER OF PASSENGERS</h3>
+                  </div>
+
+                  <div id="filter-meter">
+                    <form>
+                      <input
+                        type="range"
+                        [(ngModel)]="passengerLeft"
+                        name="passengerLeft"
+                        min="1"
+                        max="2"
+                      />
+                      <input
+                        type="range"
+                        [(ngModel)]="passengerRight"
+                        name="passengerRight"
+                        min="3"
+                        max="5"
+                        ngDefaultControl
+                      />
+                    </form>
+                  </div>
+                  <div class="output">
+                    <output>{{ passengerLeft }}</output>
+                    &nbsp;
+                    <output>{{ passengerRight }}</output>
+                  </div>
+                </section>
               </div>
 
-             
+              <section class="manufacturers">
+                <div class="topic">
+                  <h3>VEHICLE TYPE</h3>
+                </div>
 
-          </nav>
-      </header>
+                <div class="manufacturers">
+                  <form>
+                    <div class="form-group">
+                      <div id="checkbox">
+                        <input type="checkbox" name="economy" id="economy" />
+                        <label for="economy">Economy</label>
+                      </div>
+                      <div class="number">
+                        <span>1</span>
+                      </div>
+                    </div>
 
-      <main>
-          <app-nav></app-nav>
+                    <div class="form-group">
+                      <div id="checkbox">
+                        <input type="checkbox" name="compact" id="compact" />
+                        <label for="compact">Compact</label>
+                      </div>
+                      <div class="number">
+                        <span>5</span>
+                      </div>
+                    </div>
 
-          <app-search></app-search>
+                    <div class="form-group">
+                      <div id="checkbox">
+                        <input
+                          type="checkbox"
+                          name="intermediate"
+                          id="intermediate"
+                        />
+                        <label for="intermediate">Medium</label>
+                      </div>
+                      <div class="number">
+                        <span>3</span>
+                      </div>
+                    </div>
 
-      </main>
-  
-</body>
+                    <div class="form-group">
+                      <div id="checkbox">
+                        <input type="checkbox" name="sport" id="sport" />
+                        <label for="sport">Sport</label>
+                      </div>
+                      <div class="number">
+                        <span>2</span>
+                      </div>
+                    </div>
+                  </form>
+                </div>
+              </section>
+            </section>
+          </section>
 
+          <div id="results">
+            <!-- Replace content here with results component -->
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi
+            consectetur eligendi labore repudiandae vero hic dolores odit
+            consequuntur accusantium voluptatum qui suscipit aperiam commodi,
+            fugiat necessitatibus fugit aliquid porro voluptatem!
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
 </html>
-
