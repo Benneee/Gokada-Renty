@@ -1,0 +1,72 @@
+<html>
+  <body>
+    <div id="text">
+      <p>Search for a car:</p>
+    </div>
+    <div id="container">
+      <div class="form-wrap">
+        <form>
+          <div class="form-group">
+            <label for="location">LOCATION</label>
+            <input
+              class="btn-padding"
+              type="text"
+              id="location"
+              placeholder="Enter a location"
+            />
+          </div>
+          <div class="form-group" id="pick">
+            <div class="form-group-item">
+              <label for="pick-up-date">PICK-UP DATE</label>
+              <input
+                class="btn-padding small-input mr"
+                type="date"
+                id="pick-up-date"
+              />
+
+              <input
+                class="btn-padding smaller-input"
+                type="time"
+                id="pick-time"
+              />
+            </div>
+          </div>
+
+          <div class="form-group" id="drop">
+            <div class="form-group-item">
+              <label for="drop-off-date">DROP-OFF DATE</label>
+              <input
+                class="btn-padding small-input mr"
+                type="date"
+                id="drop-off-date"
+              />
+
+              <input
+                class="btn-padding smaller-input"
+                type="time"
+                id="drop-time"
+              />
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="type">CAR TYPE</label>
+            <select class="btn-padding" name="type" id="type">
+              <option value="compact">Compact</option>
+              <option value="standard">Standard</option>
+              <option value="intermediate">Intermediate</option>
+              <option value="compact">Compact</option>
+              <option value="compact">Compact</option>
+            </select>
+          </div>
+          <button class="btn-padding update-btn bg-orange">
+            UPDATE
+          </button>
+          <br />
+          <input type="checkbox" name="return" id="return" />
+          <label id="inline" for="return">Return at different location</label>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>
