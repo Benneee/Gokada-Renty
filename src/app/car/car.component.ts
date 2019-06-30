@@ -8,10 +8,19 @@ import { Car } from "./../car.model";
   styleUrls: ["./car.component.css"]
 })
 export class CarComponent implements OnInit {
-  car: Car[];
+  cars: Car[];
+  btnText = "View Car Details";
   constructor(private carService: CarService) {}
 
   ngOnInit() {
-    this.car = this.carService.getCars();
+    this.cars = this.carService.getCars();
   }
+
+  // toggleBtnText() {
+  //   if (this.btnText === "View Car Details") {
+  //     this.btnText = "Close Car Details";
+  //   } else if ((this.btnText = "Close Car Details")) {
+  //     this.btnText === "View Car Details";
+  //   }
+  // }
 }

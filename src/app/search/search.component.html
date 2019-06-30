@@ -1,11 +1,11 @@
 <html>
   <body>
     <div id="text">
-      <p>Search for a car:</p>
+      <p><i class="fa fa-search"></i> &nbsp; Search for a car:</p>
     </div>
     <div id="container">
       <div class="form-wrap">
-        <form>
+        <form #f="ngForm" (ngSubmit)="search(f.value)">
           <div class="form-group">
             <label for="location">LOCATION</label>
             <input
@@ -13,6 +13,8 @@
               type="text"
               id="location"
               placeholder="Enter a location"
+              ngModel
+              name="location"
             />
           </div>
           <div class="form-group" id="pick">
@@ -22,12 +24,16 @@
                 class="btn-padding small-input mr"
                 type="date"
                 id="pick-up-date"
+                ngModel
+                name="pick-up-date"
               />
 
               <input
                 class="btn-padding smaller-input"
                 type="time"
                 id="pick-time"
+                ngModel
+                name="pick-time"
               />
             </div>
           </div>
@@ -39,28 +45,40 @@
                 class="btn-padding small-input mr"
                 type="date"
                 id="drop-off-date"
+                ngModel
+                name="drop-off-date"
               />
 
               <input
                 class="btn-padding smaller-input"
                 type="time"
                 id="drop-time"
+                ngModel
+                name="drop-time"
               />
             </div>
           </div>
 
           <div class="form-group">
             <label for="type">CAR TYPE</label>
-            <select class="btn-padding" name="type" id="type">
+            <select
+              ngModel
+              name="car-type"
+              class="btn-padding"
+              name="type"
+              id="type"
+            >
+              <option value="">-Please select a car type-</option>
               <option value="compact">Compact</option>
+              <option value="economy">Economy</option>
               <option value="standard">Standard</option>
               <option value="intermediate">Intermediate</option>
-              <option value="compact">Compact</option>
-              <option value="compact">Compact</option>
+              <option value="sport">Sport</option>
             </select>
           </div>
-          <button class="btn-padding update-btn bg-orange">
-            UPDATE
+          <button (click)="sendCarType()" class="btn-padding update-btn bg-orange">
+            {{ formButtonObj?.text }}
+            <!-- SEARCH -->
           </button>
           <br />
           <input type="checkbox" name="return" id="return" />

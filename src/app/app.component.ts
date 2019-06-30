@@ -12,4 +12,13 @@ export class AppComponent {
 
   passengerLeft: number = 1;
   passengerRight: number = 5;
+  carType;
+
+  constructor() {}
+
+  receiveCarType($event) {
+    this.carType = $event;
+
+    console.log("[Car Type]:", this.carType);
+  }
 }
