@@ -1,5 +1,5 @@
-import { Component, OnInit } from "@angular/core";
-import { CarService } from "./car.service";
+import { Component, OnInit, Input } from "@angular/core";
+// import { CarService } from "./car.service";
 import { Car } from "./../car.model";
 
 @Component({
@@ -10,17 +10,11 @@ import { Car } from "./../car.model";
 export class CarComponent implements OnInit {
   cars: Car[];
   btnText = "View Car Details";
-  constructor(private carService: CarService) {}
+  @Input() filteredCars: Car[];
+  // constructor(private carService: CarService) {}
 
   ngOnInit() {
-    this.cars = this.carService.getCars();
+    // this.cars = this.carService.getCars();
+    this.cars = this.filteredCars;
   }
-
-  // toggleBtnText() {
-  //   if (this.btnText === "View Car Details") {
-  //     this.btnText = "Close Car Details";
-  //   } else if ((this.btnText = "Close Car Details")) {
-  //     this.btnText === "View Car Details";
-  //   }
-  // }
 }

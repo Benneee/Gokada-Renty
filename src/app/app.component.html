@@ -49,14 +49,12 @@
 
     <main>
       <section id="components">
-        <header>people
+        <header>
           <app-nav></app-nav>
         </header>
 
         <section id="search-comp">
-          <!-- Todo: Fix data transfer -->
-          <!-- <p>Car Type: {{ carType }}</p> -->
-          <app-search (carTypeEvent)="receiveCarType($event)"></app-search>
+          <app-search (theForm)="searchForm($event)"></app-search>
         </section>
 
         <div class="grid">
@@ -261,7 +259,7 @@
           <div id="results">
             <!-- Replace content here with results component -->
               <div class="cars">
-                <app-car></app-car>     
+                <app-car [filteredCars] = 'cars'></app-car>     
               </div>
           </div>
         </div>
