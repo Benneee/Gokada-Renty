@@ -1,4 +1,5 @@
 import { Component, OnInit, Output, EventEmitter } from "@angular/core";
+import { NgForm } from "@angular/forms";
 
 @Component({
   selector: "app-search",
@@ -11,24 +12,22 @@ export class SearchComponent implements OnInit {
     type: "submit"
   };
 
-  @Output() carType = new EventEmitter();
+  @Output() theForm = new EventEmitter();
 
   constructor() {}
 
-  search(searchQuery) {
-    if (searchQuery) {
-      console.log("[From Search Component]:", searchQuery.type);
-      // this.carType = searchQuery.type;
+  search(searchForm: NgForm) {
+    if (searchForm.value) {
+      // console.log("[From Search Component]:", searchQuery.type);
       this.formButtonObj = {
         text: "UPDATE",
         type: "update"
       };
-      this.sendCarType(searchQuery.type);
+      this.theForm.emit({
+        form: searchForm.value
+      });
+      // console.log("data sent", this.theForm);
     }
-  }
-
-  sendCarType(data) {
-    this.carType.emit(data);
   }
 
   ngOnInit() {}

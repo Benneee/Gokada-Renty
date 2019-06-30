@@ -90,7 +90,7 @@ export class CarService {
     )
   ];
 
-  getCars() {
+  getCars(): any {
     return this.cars;
   }
 }
