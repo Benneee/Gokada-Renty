@@ -1,1 +1,36 @@
-<p>car works!</p>
+<html>
+  <body>
+    <div class="grid-cars mb" *ngFor="let car of cars">
+      <div id="car-img">
+        <img [src]="car?.imagePath" alt="{{ car?.name }}" />
+      </div>
+
+      <div id="car-desc">
+        <h4>
+          {{ car?.name }} <span class="fade"> | {{ car?.carType }}</span>
+        </h4>
+        <p>
+          <i class="fa fa-users"></i> &nbsp; {{ car?.passengerNums }} passengers
+        </p>
+        <p><i class="fa fa-suitcase"></i> &nbsp; {{ car?.baggageCapacity }}</p>
+        <p><i class="fa fa-adn"></i> &nbsp; {{ car?.transmission }}</p>
+        <p><i class="fa fa-fan"></i> &nbsp; {{ car?.airCon }}</p>
+        <p><i class="fa fa-gas-pump"></i> &nbsp; {{ car?.mileage }} km/l</p>
+
+        <details>
+          <summary> View Car Details </summary>
+          <ul>
+            <li>{{ car?.radioType }}</li>
+            <li>{{ car?.seatMaterial }}</li>
+          </ul>
+        </details>
+      </div>
+
+      <div id="car-amount" class="mb">
+        <h2 class="mb">${{ car?.rentAmount }}</h2>
+        <p class="more-mb">Unlimited free miles included</p>
+        <button>SELECT</button>
+      </div>
+    </div>
+  </body>
+</html>
