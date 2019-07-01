@@ -17,6 +17,7 @@ export class AppComponent implements OnInit {
   passengerRight: number = 5;
 
   cars: Car[];
+  filtered = false;
   filteredCars: Car[];
   subscription: Subscription;
 
@@ -29,6 +30,8 @@ export class AppComponent implements OnInit {
 
     console.log("[car type]:", searchQuery.type);
     const carType = searchQuery.type;
+    this.filtered = true;
+
     this.filter(carType);
   }
 

@@ -227,3 +227,38 @@ header nav .others select {
     padding: 10px;
   }
 }
+
+
+.grid-cars {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr 1fr;
+  grid-gap: 1.5em;
+}
+
+.grid-cars #car-img img {
+  height: 200px;
+  width: 300px;
+}
+
+.grid-cars #car-amount {
+  text-align: center;
+}
+
+.grid-cars #car-amount button {
+  padding: 20px;
+  background: rgb(20, 110, 200);
+  color: white;
+  border-radius: 5px;
+}
+
+.fade {
+  opacity: 0.5;
+}
+
+.mb {
+  margin-bottom: 10px;
+}
+
+.more-mb {
+  margin-bottom: 20px;
+}
