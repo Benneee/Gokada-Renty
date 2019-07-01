@@ -1,5 +1,13 @@
 # Renty
 
+See the site UI here: https://gokada-renty.herokuapp.com/
+
+If you want to run this project on your machine:
+Kindly visit https://angular.io to learn about preparing your environment for angular project.
+
+If you are already familiar with angular projects:
+Clone the project and run `npm install` to make the project work when you run `ng serve`
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.0.4.
 
 ## Development server
