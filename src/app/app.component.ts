@@ -29,21 +29,17 @@ export class AppComponent implements OnInit {
 
     console.log("[car type]:", searchQuery.type);
     const carType = searchQuery.type;
-    this.filteredCars = searchQuery
-      ? this.cars.filter(car =>
-          car.carType.toLowerCase().includes(carType.toLowerCase())
-        )
-      : this.cars;
-    console.log("filtered:", this.filteredCars);
+    this.filter(carType);
   }
 
-  // filter(data: string) {
-  //   this.filteredCars = data
-  //     ? this.cars.filter(c =>
-  //         c.carType.toLowerCase().includes(data.toLowerCase())
-  //       )
-  //     : this.cars;
-  //   console.log("[data]:", data);
-  // }
+  filter(data) {
+    this.filteredCars = data
+      ? this.cars.filter(c =>
+          c.carType.toLowerCase().includes(data.toLowerCase())
+        )
+      : this.cars;
+    console.log("[data]:", data);
+    console.log(this.filteredCars);
+  }
   ngOnInit() {}
 }
