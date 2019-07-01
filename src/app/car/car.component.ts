@@ -1,4 +1,7 @@
-import { Component, OnInit, Input } from "@angular/core";
+import {
+  Component,
+  OnInit
+} from "@angular/core";
 import { CarService } from "./car.service";
 import { Car } from "./../car.model";
 
@@ -10,11 +13,13 @@ import { Car } from "./../car.model";
 export class CarComponent implements OnInit {
   cars: Car[];
   btnText = "View Car Details";
-  @Input() filteredCars: Car[];
+  // filteredCars
+  filtered = false;
+  // @Input() filteredCars: Car[];
   constructor(private carService: CarService) {}
 
   ngOnInit() {
-    // this.cars = this.carService.getCars();
-    this.cars = this.filteredCars;
+    this.cars = this.carService.getCars();
   }
+
 }
