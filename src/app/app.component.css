@@ -33,12 +33,12 @@ header nav ul li {
   border-radius: 3px;
 }
 
-header nav h1 .title {
+/* header nav h1 .title {
   font-weight: bolder;
   font-size: 1.1em;
   width: 25%;
   margin: 0 0 0 1em;
-}
+} */
 
 header nav .others {
   /* display: inline; */
